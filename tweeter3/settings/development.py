@@ -15,13 +15,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'tweeter',
-        'USER': 'tweeterapp',
-        'PASSWORD': os.environ['DB_PASSWORD'],
-        'HOST': 'localhost',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
-INSTALLED_APPS = ['whitenoise.runserver_nostatic'] + INSTALLED_APPS
+# Disable whitenoise for demo
+# INSTALLED_APPS = ['whitenoise.runserver_nostatic'] + INSTALLED_APPS
