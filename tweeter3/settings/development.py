@@ -23,3 +23,5 @@ DATABASES = {
         'PORT': '',
     }
 }
+
+INSTALLED_APPS = ['whitenoise.runserver_nostatic'] + INSTALLED_APPS
