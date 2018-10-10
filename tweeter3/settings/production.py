@@ -6,7 +6,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 
 DEBUG = False
 
-ALLOWED_HOSTS = ["tweetertestapp.azurewebsites.net"]
+ALLOWED_HOSTS = ["tweetervscodetest.azurewebsites.net"]
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
