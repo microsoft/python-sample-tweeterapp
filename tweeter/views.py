@@ -8,6 +8,10 @@ from tweeter.permissions import IsAuthorOrReadOnly
 from tweeter.serializers import TweetSerializer, UserSerializer
 
 
+def index(request):
+    return render(request, 'tweeter/index.html')
+
+
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
