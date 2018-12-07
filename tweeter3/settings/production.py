@@ -6,7 +6,8 @@ SECRET_KEY = os.environ['SECRET_KEY']
 
 DEBUG = False
 
-ALLOWED_HOSTS = ["tweeterapp.azurewebsites.net"]
+AZURE_APPSERVICE_HOSTNAME = os.environ['AZURE_APPSERVICE_HOSTNAME']
+ALLOWED_HOSTS = [f"{AZURE_APPSERVICE_HOSTNAME}.azurewebsites.net"]
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
@@ -26,3 +27,18 @@ DATABASES = {
         'PORT': '',
     }
 }
+
+if os.environ.get('SEND_ADMIN_EMAILS'):
+    # Optional Email Settings
+    EMAIL_HOST = os.environ.get('EMAIL_HOST')
+    EMAIL_PORT = os.environ.get('EMAIL_PORT')
+    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+    EMAIL_USE_TLS = True
+    DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+    EMAIL_FROM = EMAIL_HOST_USER
+    EMAIL_SUBJECT_PREFIX = '[Tweeter] '
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+    # ADMINS
+    ADMINS = [('Website Admin', os.environ.get('EMAIL_HOST_USER'))]
