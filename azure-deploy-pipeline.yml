@@ -12,14 +12,12 @@ pool:
 variables:
   imageName: 'dandjango.azurecr.io/tweeter:latest'
 
-# get docker login password from ACR key
-env:
-  DOCKER_LOGIN_PASSWORD: $(acrkey)
-
 steps:
+- script: docker login -u dandjango -p $DOCKER_LOGIN_PASSWORD
+  env:
+    DOCKER_LOGIN_PASSWORD: $(acrkey)
+  displayName: 'docker login'
 - script: docker build -f Dockerfile -t $(imageName) .
   displayName: 'docker build'
-- script: docker login -u dandjango -p $DOCKER_LOGIN_PASSWORD
-  displayName: 'docker login'
 - script: docker push $(imageName)
   displayName: 'docker push'
