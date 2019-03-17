@@ -10,10 +10,16 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 variables:
-  imageName: 'dandocker.azurecr.io/tweeter:latest'
+  imageName: 'dandjango.azurecr.io/tweeter:latest'
+
+# get docker login password from ACR key
+env:
+  DOCKER_LOGIN_PASSWORD: $(acrkey)
 
 steps:
 - script: docker build -f Dockerfile -t $(imageName) .
   displayName: 'docker build'
+- script: docker login -u dandjango -p $DOCKER_LOGIN_PASSWORD
+  displayName: 'docker login'
 - script: docker push $(imageName)
   displayName: 'docker push'
