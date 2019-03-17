@@ -15,3 +15,5 @@ variables:
 steps:
 - script: docker build -f Dockerfile -t $(imageName) .
   displayName: 'docker build'
+- script: docker push $(imageName)
+  displayName: 'docker push'
