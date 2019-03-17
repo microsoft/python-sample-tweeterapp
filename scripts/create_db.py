@@ -3,8 +3,6 @@ import subprocess
 import urllib.request
 import dotenv
 
-print("Yo!")
-
 dotenv.read_dotenv()
 
 REQUIRED_ENV_VARS = (
