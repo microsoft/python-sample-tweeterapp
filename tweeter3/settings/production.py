@@ -2,12 +2,12 @@ from tweeter3.settings.base import *
 
 import os
 
-SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = os.environ.get('SECRET_KEY', 'my-secret-key')
 
 DEBUG = False
 
-AZURE_APPSERVICE_HOSTNAME = os.environ['AZURE_APPSERVICE_HOSTNAME']
-ALLOWED_HOSTS = [f"{AZURE_APPSERVICE_HOSTNAME}.azurewebsites.net"]
+AZURE_APPSERVICE_HOSTNAME = os.environ.get('AZURE_APPSERVICE_HOSTNAME', '')
+ALLOWED_HOSTS = ["127.0.0.1", f"{AZURE_APPSERVICE_HOSTNAME}.azurewebsites.net"]
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
