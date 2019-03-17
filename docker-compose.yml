@@ -2,7 +2,7 @@ version: '2.1'
 
 services:
   tweeter3:
-    image: tweeter3
+    image: dandjango.azurecr.io/tweeter3
     build: .
     env_file: .env
     ports:

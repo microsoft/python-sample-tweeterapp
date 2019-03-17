@@ -3,28 +3,20 @@
 # OS Support also exists for jessie & stretch (slim and full).
 # See https://hub.docker.com/r/library/python/ for all supported Python
 # tags from Docker Hub.
-FROM tiangolo/uwsgi-nginx
+FROM python:slim-stretch
 
 # If you prefer miniconda:
 #FROM continuumio/miniconda3
 
 LABEL Name=tweeter3 Version=0.0.1
-
-ENV LISTEN_PORT=8000
 EXPOSE 8000
-
-# Indicate where uwsgi.ini lives
-ENV UWSGI_INI uwsgi.ini
-
-# Tell nginx where static files live (as typically collected using Django's
-# collectstatic command.
-ENV STATIC_URL /app/tweeter3/staticfiles
 
 WORKDIR /app
 ADD . /app
 
 # Using pip:
 RUN python3 -m pip install -r requirements.txt
+CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
 
 # Using pipenv:
 #RUN python3 -m pip install pipenv
