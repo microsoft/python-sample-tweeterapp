@@ -10,7 +10,7 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 variables:
-  imageName: 'your-container-image-name:$(build.buildId)'
+  imageName: 'dandocker.azurecr.io/tweeter:latest'
 
 steps:
 - script: docker build -f Dockerfile -t $(imageName) .
