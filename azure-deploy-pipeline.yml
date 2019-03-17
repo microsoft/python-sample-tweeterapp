@@ -13,7 +13,7 @@ variables:
   imageName: 'dandjango.azurecr.io/tweeter:latest'
 
 steps:
-- script: docker login -u dandjango -p $DOCKER_LOGIN_PASSWORD
+- script: docker login dandjango.azurecr.io -u dandjango -p $DOCKER_LOGIN_PASSWORD
   env:
     DOCKER_LOGIN_PASSWORD: $(acrkey)
   displayName: 'docker login'
