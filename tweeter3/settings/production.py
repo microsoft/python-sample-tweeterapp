@@ -7,7 +7,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'my-secret-key')
 DEBUG = False
 
 AZURE_APPSERVICE_HOSTNAME = os.environ.get('AZURE_APPSERVICE_HOSTNAME', '')
-ALLOWED_HOSTS = ["127.0.0.1", f"{AZURE_APPSERVICE_HOSTNAME}.azurewebsites.net"]
+ALLOWED_HOSTS = ["127.0.0.1", "localhost", f"{AZURE_APPSERVICE_HOSTNAME}.azurewebsites.net"]
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases

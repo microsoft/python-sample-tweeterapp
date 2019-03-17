@@ -22,15 +22,6 @@ if missing:
     print("Exiting.")
     exit()
 
-# psql_command = [
-#     'psql', 
-#     f"host={os.environ.get('DB_HOST')}.postgres.azure.com",
-#     'sslmode=require',
-#     'port=5432',
-#     f"user={os.environ.get('DB_USER')}@{os.environ.get('DB_HOST')}",
-#     f"dbname={os.environ.get('DB_NAME')}"
-# ]
-
 os.environ.setdefault('PGPASSWORD', os.environ.get('DB_PASSWORD'))
 
 psql_command = [

@@ -1,0 +1,10 @@
+version: '2.1'
+
+services:
+  tweeter3:
+    image: tweeter3
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8000:8000

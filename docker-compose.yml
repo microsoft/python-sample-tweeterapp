@@ -1,0 +1,9 @@
+version: '2.1'
+
+services:
+  tweeter3:
+    image: tweeter3
+    build: .
+    env_file: .env
+    ports:
+      - 8000:8000

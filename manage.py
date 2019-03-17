@@ -4,7 +4,10 @@ import sys
 import dotenv
 
 if __name__ == '__main__':
-    dotenv.read_dotenv()
+    # Use .env file if it is found
+    env_path = os.getcwd() + '/.env'
+    if os.path.exists(env_path):
+        dotenv.read_dotenv(env_path)
 
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tweeter3.settings.development')
     try:
