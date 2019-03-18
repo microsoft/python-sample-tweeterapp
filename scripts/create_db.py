@@ -3,7 +3,7 @@ import subprocess
 import urllib.request
 import dotenv
 
-dotenv.read_dotenv()
+dotenv.read_dotenv(os.getcwd() + "/.env")
 
 REQUIRED_ENV_VARS = (
     'DB_USER',
@@ -25,6 +25,8 @@ if missing:
     print("Exiting.")
     exit()
 
+print("This script will take about 3 minutes to run.")
+
 # Ref: https://docs.microsoft.com/en-gb/cli/azure/postgres/server?view=azure-cli-latest#az-postgres-server-create
 # SKUs: https://docs.microsoft.com/en-us/azure/postgresql/concepts-pricing-tiers
 #       {pricing tier}_{compute generation}_{vCores}
@@ -38,7 +40,6 @@ create_server_command = [
     '--sku-name', 'B_Gen5_1',
 ]
 
-print("This script will take about 3 minutes to run.")
 print("Creating PostgreSQL server...")
 subprocess.check_call(create_server_command, shell=True)
 
@@ -81,7 +82,6 @@ create_db_command = [
 print("Creating App DB...")
 subprocess.check_call(create_db_command, shell=True)
 
-
 connect_details_command = [
     'az', 'postgres', 'server', 'show',
     '--resource-group', AZ_GROUP,
@@ -89,6 +89,3 @@ connect_details_command = [
 ]
 print("Getting access details...")
 subprocess.check_call(connect_details_command, shell=True)
-
-# Connect to Azure using connection string format (to force SSL)
-# psql "host=$POSTGRES_HOST sslmode=require port=5432 user=$POSTGRES_ADMIN_USER@$POSTGRES_SERVER_NAME dbname=postgres" -W
