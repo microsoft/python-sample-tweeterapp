@@ -10,7 +10,7 @@ from tweeter.serializers import TweetSerializer, UserSerializer
 
 def index(request):
     # If fixtures are loaded, let's always log in as the user Bob.
-    bob = User.objects.filter(username='nina').first()
+    bob = User.objects.filter(first_name='bob').first()
     if bob:
         print("Logging in as Bob!")
         login(request, bob)
