@@ -10,6 +10,11 @@ if __name__ == '__main__':
         dotenv.read_dotenv(env_path)
 
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'tweeter3.settings.development')
+    if (os.environ.get('DJANGO_SETTINGS_MODULE') == 'tweeter3.settings.devcontainer'):
+        from django.core.management.commands.runserver import Command as runserver
+        runserver.default_port = "5000"
+        runserver.default_addr = "0.0.0.0"
+
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

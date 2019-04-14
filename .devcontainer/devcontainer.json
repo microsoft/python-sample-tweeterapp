@@ -1,0 +1,9 @@
+{
+	"name": "Django",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "tweeter3",
+	"workspaceFolder": "/workspace",
+	"extensions": [
+		"ms-python.python"
+	]
+}
