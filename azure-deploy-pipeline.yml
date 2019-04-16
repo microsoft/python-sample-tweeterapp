@@ -1,0 +1,23 @@
+# Docker image
+# Build a Docker image to deploy, run, or push to a container registry.
+# Add steps that use Docker Compose, tag images, push to a registry, run an image, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+
+trigger:
+- dockerized
+
+pool:
+  vmImage: 'Ubuntu-16.04'
+
+variables:
+  imageName: 'dandjango.azurecr.io/tweeter3:latest'
+
+steps:
+- script: docker login dandjango.azurecr.io -u dandjango -p $DOCKER_LOGIN_PASSWORD
+  env:
+    DOCKER_LOGIN_PASSWORD: $(acrkey)
+  displayName: 'docker login'
+- script: docker build -f Dockerfile -t $(imageName) .
+  displayName: 'docker build'
+- script: docker push $(imageName)
+  displayName: 'docker push'

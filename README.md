@@ -1,4 +1,31 @@
 
+## Getting Started with Dev Containers
+
+1. Get set up with Visual Studio Code insiders, Docker and remote extensions [instructions here](https://vscode-docs-remote.azurewebsites.net/docs/remote/remote-overview#_getting-started)
+
+1. If on windows, set git to use LF line endings: 
+    ```
+    git config --global core.autocrlf false
+    ```
+1. Clone repo 
+    ```
+    git clone https://dev.azure.com/Microsoft/python-sample-tweeterapp
+    ```
+1. From Visual Studio Code Insiders, run the ```Remote-Containers: Open Folder in Container...``` and select the ```python-sample-tweeterapp``` folder
+
+After the dev container has installed and files appear in the explorer, you are good to go!
+
+## Run some code!
+
+Open the integrated terminal with ```Ctrl-` ```, and run:
+
+```
+python manage.py migrate
+python manage.py loaddata initial_data
+python manage.py runserver
+```
+
+
 # Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
