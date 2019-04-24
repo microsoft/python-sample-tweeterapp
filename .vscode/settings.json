@@ -1,0 +1,15 @@
+{
+    "python.testing.pyTestArgs": [
+        "tweeter"
+    ],
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./tweeter",
+        "-p",
+        "test*.py"
+    ],
+    "python.testing.pyTestEnabled": true,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.unittestEnabled": false
+}
