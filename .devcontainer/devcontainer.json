@@ -1,10 +1,9 @@
 {
-	"name": "Django",
+	"name": "Python 3 & PostgreSQL",
 	"dockerComposeFile": "docker-compose.yml",
-	"service": "tweeter3",
+	"service": "app",
 	"workspaceFolder": "/workspace",
 	"extensions": [
 		"ms-python.python",
-		"VisualStudioExptTeam.vscodeintellicode"
 	]
 }

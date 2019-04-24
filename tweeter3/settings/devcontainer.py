@@ -16,7 +16,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DB_USER = "postgres"
 DB_NAME = "postgres"
 DB_HOST = "db"
-DB_PASSWORD = "IAmAPassword1!"
+DB_PASSWORD = "LocalPassword"
 
 DATABASES = {
     'default': {

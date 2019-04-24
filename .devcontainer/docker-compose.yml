@@ -2,7 +2,6 @@ version: '3'
 
 services:
   app:
-    image: tweeterapp
     build: 
       context: ..
       dockerfile: .devcontainer/Dockerfile
@@ -13,10 +12,11 @@ services:
     command: sleep infinity
     environment:
       DJANGO_SETTINGS_MODULE: tweeter3.settings.devcontainer
+
   db:
     image: postgres
     restart: always
     ports: 
       - 5432:5432
     environment:
-      POSTGRES_PASSWORD: IAmAPassword1!
+      POSTGRES_PASSWORD: LocalPassword
