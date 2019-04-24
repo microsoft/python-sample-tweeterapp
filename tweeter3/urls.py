@@ -15,7 +15,7 @@ router.register(r'tweets', views.TweetViewSet)
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     path('admin/', admin.site.urls),
-    path('accounts/',include('django.contrib.auth.urls'))
+    path('accounts/',include('django.contrib.auth.urls')),
     url(r'^api/', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
