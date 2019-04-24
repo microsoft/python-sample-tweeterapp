@@ -24,6 +24,8 @@ DATABASES = {
         'NAME': DB_NAME,
         'USER': f'{DB_USER}',
         'PASSWORD': DB_PASSWORD,
+
+        
         'HOST': f'{DB_HOST}',
         'PORT': '',
     }
