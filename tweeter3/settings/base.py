@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'tweeter',
     'rest_framework',
+    'accounts.apps.AccountsConfig'
 ]
 
 MIDDLEWARE = [
