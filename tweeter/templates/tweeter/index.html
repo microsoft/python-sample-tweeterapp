@@ -18,7 +18,16 @@
     <li ui-sref-active="active"><a ui-sref="profile"'><span>Profile</span></a></li>
   </ul>
 </div>
-<h3 class="user-h">logged in as: {{ user.get_username }}</h3>
+<h3 class="user-h">
+    {% block content %}
+    {% if user.is_authenticated %}
+      Hi {{ user.get_username }}!
+      <p><a href="{% url 'logout' %}">Logout</a></p>
+    {% else %}
+      <p>You are not logged in. Click <a href="{% url 'login' %}">here</a> to log in.</p>
+    {% endif %}
+    {% endblock %}
+</h3>
 
 <div ui-view></div>
 
