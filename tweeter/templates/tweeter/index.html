@@ -24,7 +24,7 @@
       Hi {{ user.get_username }}!
       <p><a href="{% url 'logout' %}">Logout</a></p>
     {% else %}
-      <p>You are not logged in. Click <a href="{% url 'login' %}">here</a> to log in.</p>
+      <p>You are not logged in. <a href="{% url 'signup' %}">Create a new account</a> or <a href="{% url 'login' %}">login</a>.</p>
     {% endif %}
     {% endblock %}
 </h3>
