@@ -14,6 +14,7 @@ dist/
 downloads/
 eggs/
 .eggs/
+#lib/
 lib64/
 parts/
 sdist/
@@ -37,6 +38,7 @@ pip-delete-this-directory.txt
 # Unit test / coverage reports
 htmlcov/
 .tox/
+.nox/
 .coverage
 .coverage.*
 .cache
@@ -54,6 +56,8 @@ coverage.xml
 *.log
 local_settings.py
 db.sqlite3
+staticfiles/
+.env*
 
 # Flask stuff:
 instance/
@@ -70,6 +74,10 @@ target/
 
 # Jupyter Notebook
 .ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
 
 # pyenv
 .python-version
@@ -101,3 +109,6 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+.dmypy.json
+dmypy.json
+node_modules
