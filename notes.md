@@ -6,6 +6,6 @@ To get started with running this application:
 
 Current State as of 4/26 PR:
 - at one point, I had the hot-reloading working, but now when I use the command `npm run start`, I get a big error message. However, 
-  all of the necessary pieces for hot reloading are in the webpack.config.js file. Overall, not sure what is happening here now.
+  all of the necessary pieces for hot reloading are in the webpack.config.js file and the `package.json` under `scripts`. Overall, not sure what is happening here now. I used [this](https://thoughtbot.com/blog/setting-up-webpack-for-react-and-hot-module-replacement) link for reference for hot reload.
 - Was working on getting the tweet typing/ tweet button functionality to work. It is currently at the point where a user's typing is being registered, and I even
   added a POST command to attempt to post the data to `api/tweets`, but was running into some function/object errors that I couldn't figure out.
