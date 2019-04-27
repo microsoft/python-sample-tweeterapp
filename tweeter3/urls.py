@@ -6,15 +6,18 @@ from django.contrib import admin
 from django.urls import path
 from rest_framework import routers
 
-from tweeter import views
+from frontend import views
+from tweeter.views import UserViewSet, TweetViewSet
 
 router = routers.DefaultRouter()
-router.register(r'users', views.UserViewSet)
-router.register(r'tweets', views.TweetViewSet)
+router.register(r'users', UserViewSet)
+router.register(r'tweets', TweetViewSet)
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     path('admin/', admin.site.urls),
     url(r'^api/', include(router.urls)),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    #configure a new url mapping for frontend.
+    # path('', include('frontend.urls'))
 ]
