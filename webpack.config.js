@@ -1,11 +1,10 @@
 const webpack = require('webpack');
 
-
 module.exports = {
   entry: {
     javascript: './frontend/static/frontend/main.js',
     html: './frontend/templates/frontend/react_index.html',
-},
+  },
   module: {
     rules: [
       {

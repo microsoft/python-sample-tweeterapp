@@ -16,16 +16,26 @@ class App extends Component {
    
     render() {
         return (
-            <DataProvider 
-                endpoint="api/tweets/"
-                render= {tweets => {
-                    return (
-                        <div>
-                            <Tweets tweets={tweets}/>
-                        </div>
-                    )
-                }}
-            />
+            <div>
+                <h1 class = "first">Tweeter</h1>
+                <div class="icon-bar">
+                <a class="active" href="#"><i class="fa fa-home"></i></a> 
+                <a href="#"><i class="fa fa-search"></i></a> 
+                <a href="#"><i class="fa fa-envelope"></i></a> 
+                <a href="#"><i class="fa fa-globe"></i></a>
+                </div>
+            
+                <DataProvider 
+                    endpoint="api/tweets/"
+                    render= {tweets => {
+                        return (
+                            <div>
+                                <Tweets tweets={tweets}/>
+                            </div>
+                        )
+                    }}
+                />
+            </div>
         )
     }
 }

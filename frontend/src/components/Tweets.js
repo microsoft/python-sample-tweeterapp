@@ -30,7 +30,7 @@ class Tweets extends Component {
       console.log(newTweets)
       this.setState({tweets: newTweets, addTweetText: ''})
   }
-
+  
   render() {
       return (
       <div className="container">
