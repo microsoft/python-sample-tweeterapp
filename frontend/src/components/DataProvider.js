@@ -6,7 +6,7 @@ class DataProvider extends Component {
   static propTypes = {
     endpoint: PropTypes.string.isRequired,
     render: PropTypes.func.isRequired,
-    tweetStateFromParent: PropTypes.object
+    tweets: PropTypes.object
   };
 
   state = {
@@ -15,16 +15,14 @@ class DataProvider extends Component {
       placeholder: "Loading..."
     };
 
-
   componentWillReceiveProps(nextProps){
-    if(nextProps.tweetStateFromParent!==this.props.tweetStateFromParent){
+    if(nextProps.tweets!==this.props.tweets){
 
-      const last = nextProps.tweetStateFromParent[nextProps.tweetStateFromParent.length - 1];
+      const last = nextProps.tweets[nextProps.tweets.length - 1];
       console.log("OK THE TWEET TO SEND DJANGO IS ", last);
         
     }
   }
-
 
   componentDidMount() {
     fetch(this.props.endpoint)

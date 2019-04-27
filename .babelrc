@@ -1,7 +1,7 @@
 {
 
     "presets": [
-        "@babel/preset-env", "@babel/preset-react"
+        "@babel/preset-env", "@babel/preset-react",
     ],
     // "presets": [
     //     [
@@ -13,6 +13,6 @@
     //     ]
     // ],
     "plugins": [
-        "transform-class-properties"
+        "transform-class-properties", "@babel/transform-runtime"
     ]
 }
