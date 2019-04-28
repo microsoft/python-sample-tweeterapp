@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
-import "./TweeterBody.css"
+import "./Tweets.css"
 import Cookies from 'js-cookie'
 
 class Tweets extends Component {
@@ -34,7 +34,7 @@ class Tweets extends Component {
   render() {
       return (
       <div className="container">
-        <div className="tweet-container">
+        <div className="tweettext-container">
             <input 
               onChange={event => this.setState({addTweetText: event.target.value})} 
               value={this.state.addTweetText} 
@@ -44,37 +44,33 @@ class Tweets extends Component {
                 }
               }}
               placeholder="Say something . . ." 
-              type="text" className="tweet" style={{'width':'1000px'}}/>
-            <button type = "button" onClick={this.addTweet.bind(this)} className="btn-tweet" id="tweet"> Tweet</button>
+              type="text" className="tweet"/>
+            <button type="button" onClick={this.addTweet.bind(this)}>Tweet</button>
         </div>
 
         <div className="Feed">
           {this.state.tweets.length == 0 && <p>Nothing to show</p>}
-          <ul>
-            {this.state.tweets.map(tweet => (
-              <li key={tweet.id}>
-                <div className="avatar">
-                  <img src="https://i2.wp.com/www.mnleadership.org/wp-content/uploads/2017/02/Anonymous-Avatar.png?ssl=1" />
-                  <div className="hover">
-                    <div className="icon-twitter"></div>
-                  </div>
-                </div>
-                <div className="bubble-container">
-                  <div className="bubble">
-                    <h3>@{tweet.user}</h3><br />
-                    {tweet.text}
-                    <div className="over-bubble">
-                      <div className="icon-mail-reply action"></div>
-                      <div className="icon-retweet action"></div>
-                      <div className="icon-star"></div>
+          {this.state.tweets.map(tweet => (
+            <div key={tweet.id} className="tweet">
+              <div className="avatar">
+                <i className="fa fa-user fa-4x"></i>
+              </div>
+              <div className="bubble-container">
+                <div className="bubble">
+                  <p className='username'>@{tweet.user}</p>
+                  <p className='tweettext'>{tweet.text}</p>
+                  <div className="over-bubble">
+                    <div className='action-buttons'>
+                      <i className='fa fa-reply'></i>
+                      <i className='fa fa-retweet'></i>
+                      <i className='fa fa-star'></i>
                     </div>
                   </div>
-                  <div className="arrow"></div>
                 </div>
-              </li>
-
-            ))}
-          </ul>
+                <div className="arrow"></div>
+              </div>
+            </div>
+          ))}
         </div>
     </div>)
   }

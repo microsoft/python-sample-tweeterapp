@@ -1,0 +1,110 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  .tweettext-container {
+    display: flex;
+    align-items: center
+  }
+  .tweettext-container button {
+    height: 32px;
+  }
+  .tweettext-container input {
+    width: 300px;
+  }
+  .tweet {
+    display: flex;
+    margin: 16px;
+    align-items: center
+  }
+  
+  .username {
+    font-size: 1.2em
+  }
+  
+  .bubble {
+    width: 100%;
+    background-color: #3d474b25;
+    padding-left: 20px;
+    position: relative;
+    border-radius: 8px;
+    text-align: left;
+    display: inline-block; 
+  }
+    .bubble:hover > .over-bubble {
+      opacity: 1; 
+    }
+  
+  .bubble-container {
+    width: 75%;
+    display: block;
+    position: relative;
+    padding-left: 20px;
+    display: inline-block; 
+  }
+  
+  .arrow {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 6px;
+    bottom: 25%;
+    height: 0;
+    width: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right: 20px solid #ecf0f1; 
+  }
+  
+  .avatar {
+    width: 64px;
+    height: 64px;
+    position: relative;
+    overflow: hidden;
+  }
+    .avatar .fa:hover {
+      color: rgb(115, 115, 115)
+    }
+
+  
+  .icon-twitter {
+    font-size: 1.5em; 
+  }
+  
+  .new {
+    position: absolute;
+    right: 5%; 
+  }
+  
+  .over-bubble {
+    line-height: 1.4em;
+    background-color: rgba(236, 240, 241, 0.8);
+    position: relative;
+    border-radius: 8px;
+    text-align: center;
+    display: inline-block;
+    position: absolute !important;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in;
+    font-size: 2.8em;
+    text-shadow: white 1px 1px 0; 
+  }
+  
+  .action-buttons {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: flex-end
+  }
+
+  .action-buttons .fa:hover {
+    color: rgb(0, 120, 212)
+  }
