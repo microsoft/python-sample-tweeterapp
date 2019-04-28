@@ -1,8 +1,11 @@
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.models import User
+
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
+from django.http import HttpResponseRedirect
 
 from rest_framework import viewsets
 from rest_framework.response import Response
@@ -20,6 +23,12 @@ def index(request):
 def current_user(request):
     serializer = UserSerializer(request.user)
     return Response(serializer.data)
+
+@api_view(['POST'])
+def create_user(request):
+    data = request.data
+    user = User.objects.create_user(data['username'], password=data['password1'])
+    return HttpResponseRedirect('/login')
 
 class SignUp(generic.CreateView):
     form_class = UserCreationForm

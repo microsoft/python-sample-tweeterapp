@@ -13,13 +13,14 @@ router.register(r'users', views.UserViewSet)
 router.register(r'tweets', views.TweetViewSet)
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
     path('admin/', admin.site.urls),
     path('accounts/current/', views.current_user, name='current'),
-    path('accounts/signup/', views.SignUp.as_view(), name='signup'),
+    path('accounts/signup/', views.create_user, name='signup'),
     path('accounts/',include('django.contrib.auth.urls')),
     url(r'^api/', include(router.urls)),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^.*/$', views.index, name='index'),
+    url(r'^$', views.index, name='index'),
     #configure a new url mapping for frontend.
     # path('', include('frontend.urls'))
 ]
