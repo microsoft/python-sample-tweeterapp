@@ -26,6 +26,19 @@ class App extends Component {
                 </div>
             
                 <DataProvider 
+                    endpoint="accounts/current"
+                    render= {me => {
+                        return (
+                            <div>
+                                {me ? <p>Logged in as {me.username}. <a href="/accounts/logout">Logout</a></p>
+                                    : <p>You are not logged in. <a href="/accounts/signup">Create a new account</a> or <a href="/accounts/login">login</a>.</p>
+                                }
+                            </div>
+                        )
+                    }}
+                />
+
+                <DataProvider 
                     endpoint="api/tweets/"
                     render= {tweets => {
                         return (
