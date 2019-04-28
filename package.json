@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --hot --inline",
-    "dev": "webpack --watch --mode development ./frontend/src/index.js --output ./frontend/static/frontend/main.js",
-    "build": "webpack --mode production ./frontend/src/index.js --output ./frontend/static/frontend/main.js"
+    "dev": "webpack --watch --mode development ./tweeter/src/index.js --output ./tweeter/static/frontend/main.js",
+    "build": "webpack --mode production ./tweeter/src/index.js --output ./tweeter/static/frontend/main.js"
   },
   "repository": {
     "type": "git",
