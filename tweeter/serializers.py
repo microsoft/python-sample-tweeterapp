@@ -13,7 +13,7 @@ class TweetSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Tweet
-        fields = ('user', 'text', 'timestamp')
+        fields = ('id', 'user', 'text', 'timestamp')
 
     def validate_text(self, value):
         if len(value) < 5:
@@ -32,4 +32,4 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('username', 'first_name', 'last_name', 'last_login', 'tweets')
+        fields = ('id','username', 'first_name', 'last_name', 'last_login', 'tweets')

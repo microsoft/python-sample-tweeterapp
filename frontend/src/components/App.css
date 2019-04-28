@@ -1,0 +1,107 @@
+.main-body {
+  display: flex;
+  flex-direction: column;
+  background-color: #11171d;
+  min-height: 80rem;
+}
+
+.body {
+  display: flex;
+  flex-direction: column; 
+}
+
+.inner-body {
+  display: flex;
+  flex-direction: row;
+}
+
+.tweet-body {
+  display: flex;
+  flex-direction: column;
+  width: 566px;
+  height: 170px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  background-color: #4285c4;
+  margin-left: 25rem;
+  margin-bottom: 0.1rem;
+}
+
+ .tweet-body:hover { 
+  background-color: #11171d;
+  border: #ffffff;
+} 
+
+.picture {
+  margin-left: 24px;
+  margin-top: 17px;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+}
+
+.name {
+  display: flex;
+  flex-direction: row;
+  margin-left: 15px;
+  margin-top: 19px;
+  min-width: 85px;
+  height: 17px;
+  font-family: HelveticaNeue;
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: -0.6px;
+  color: #ffffff;
+}
+
+.handle {
+  margin-left: 10px;
+  margin-top: 19px;
+  min-width: 128px;
+  height: 16px;
+  font-family: HelveticaNeue;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: -0.6px;
+  color: #75797d;
+} */
+
+.tweet {
+  margin-left: 15px;
+  margin-top: 7px;
+  width: 445px;
+  height: 88px;
+  font-family: HelveticaNeue;
+  font-size: 14px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: -0.6px;
+  color: #ffffff;
+}
+.timeline {
+  width: 560px;
+  display: block;
+  margin: auto;
+  background-color: #dde1e2;
+  padding-bottom: 2em;
+  -webkit-box-shadow: #bdc3c7 0 5px 5px;
+  -moz-box-shadow: #bdc3c7 0 5px 5px;
+  box-shadow: #bdc3c7 0 5px 5px;
+  -moz-border-radius-bottomleft: 8px;
+  -webkit-border-bottom-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  -moz-border-radius-bottomright: 8px;
+  -webkit-border-bottom-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  margin-bottom: 2em; }
+  .timeline li {
+    padding: 1em 0; }
+  .timeline li:nth-child(even) {
+    background-color: #d3d7d8; }
