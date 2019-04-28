@@ -1,3 +1,5 @@
+@import-normalize;
+
 .main-body {
   display: flex;
   flex-direction: column;
@@ -92,14 +94,8 @@
   margin: auto;
   background-color: #dde1e2;
   padding-bottom: 2em;
-  -webkit-box-shadow: #bdc3c7 0 5px 5px;
-  -moz-box-shadow: #bdc3c7 0 5px 5px;
   box-shadow: #bdc3c7 0 5px 5px;
-  -moz-border-radius-bottomleft: 8px;
-  -webkit-border-bottom-left-radius: 8px;
   border-bottom-left-radius: 8px;
-  -moz-border-radius-bottomright: 8px;
-  -webkit-border-bottom-right-radius: 8px;
   border-bottom-right-radius: 8px;
   margin-bottom: 2em; }
   .timeline li {

@@ -1,7 +1,5 @@
 * {
     box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
   }
   
   body {
@@ -17,10 +15,6 @@
     padding: 20px;
     background-color: #3d474b25;
     position: relative;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    -ms-border-radius: 8px;
-    -o-border-radius: 8px;
     border-radius: 8px;
     text-align: left;
     display: inline-block; }
@@ -53,14 +47,8 @@
     margin: auto;
     background-color: #dde1e2;
     padding-bottom: 2em;
-    -webkit-box-shadow: #bdc3c7 0 5px 5px;
-    -moz-box-shadow: #bdc3c7 0 5px 5px;
     box-shadow: #bdc3c7 0 5px 5px;
-    -moz-border-radius-bottomleft: 8px;
-    -webkit-border-bottom-left-radius: 8px;
     border-bottom-left-radius: 8px;
-    -moz-border-radius-bottomright: 8px;
-    -webkit-border-bottom-right-radius: 8px;
     border-bottom-right-radius: 8px;
     margin-bottom: 2em; }
     .timeline li {
@@ -77,10 +65,6 @@
     margin-left: 2%; }
     .avatar img {
       width: 100%;
-      -webkit-border-radius: 50%;
-      -moz-border-radius: 50%;
-      -ms-border-radius: 50%;
-      -o-border-radius: 50%;
       border-radius: 50%;
       border: 5px solid #ecf0f1;
       position: relative; }
@@ -96,10 +80,6 @@
     top: 0;
     font-size: 1.8em;
     border: 5px solid #5cc0ff;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
     border-radius: 50%;
     text-align: center;
     color: white;
@@ -107,17 +87,8 @@
     opacity: 0;
     font-family: 'FontAwesome';
     font-weight: 300;
-    -webkit-transition-property: all;
-    -moz-transition-property: all;
-    -o-transition-property: all;
     transition-property: all;
-    -webkit-transition-duration: 0.5s;
-    -moz-transition-duration: 0.5s;
-    -o-transition-duration: 0.5s;
     transition-duration: 0.5s;
-    -webkit-transition-timing-function: ease;
-    -moz-transition-timing-function: ease;
-    -o-transition-timing-function: ease;
     transition-timing-function: ease; }
   
   .first {
@@ -132,11 +103,7 @@
     margin-top: 1em;
     font-family: "Lato";
     font-size: 1.6em;
-    -moz-border-radius-topleft: 8px;
-    -webkit-border-top-left-radius: 8px;
     border-top-left-radius: 8px;
-    -moz-border-radius-topright: 8px;
-    -webkit-border-top-right-radius: 8px;
     border-top-right-radius: 8px;
     position: relative; }
   
@@ -152,10 +119,6 @@
     padding-top: 10%;
     background-color: rgba(236, 240, 241, 0.8);
     position: relative;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    -ms-border-radius: 8px;
-    -o-border-radius: 8px;
     border-radius: 8px;
     text-align: center;
     display: inline-block;
@@ -166,82 +129,37 @@
     top: 0;
     left: 0;
     z-index: 999;
-    -webkit-transition-property: all;
-    -moz-transition-property: all;
-    -o-transition-property: all;
     transition-property: all;
-    -webkit-transition-duration: 0.3s;
-    -moz-transition-duration: 0.3s;
-    -o-transition-duration: 0.3s;
     transition-duration: 0.3s;
-    -webkit-transition-timing-function: ease-in;
-    -moz-transition-timing-function: ease-in;
-    -o-transition-timing-function: ease-in;
     transition-timing-function: ease-in;
     font-size: 2.8em;
     text-shadow: white 1px 1px 0; }
   
   .action {
     margin-right: .3em;
-    -webkit-transition-property: all;
-    -moz-transition-property: all;
-    -o-transition-property: all;
     transition-property: all;
-    -webkit-transition-duration: 0.2s;
-    -moz-transition-duration: 0.2s;
-    -o-transition-duration: 0.2s;
     transition-duration: 0.2s;
-    -webkit-transition-timing-function: ease-in;
-    -moz-transition-timing-function: ease-in;
-    -o-transition-timing-function: ease-in;
     transition-timing-function: ease-in; }
   
   .icon-star {
-    -webkit-transition-property: all;
-    -moz-transition-property: all;
-    -o-transition-property: all;
     transition-property: all;
-    -webkit-transition-duration: 0.2s;
-    -moz-transition-duration: 0.2s;
-    -o-transition-duration: 0.2s;
     transition-duration: 0.2s;
-    -webkit-transition-timing-function: ease;
-    -moz-transition-timing-function: ease;
-    -o-transition-timing-function: ease;
     transition-timing-function: ease; }
     .icon-star:hover {
       cursor: pointer;
       color: #f39c12; }
   
   .icon-retweet {
-    -webkit-transition-property: all;
-    -moz-transition-property: all;
-    -o-transition-property: all;
     transition-property: all;
-    -webkit-transition-duration: 0.2s;
-    -moz-transition-duration: 0.2s;
-    -o-transition-duration: 0.2s;
     transition-duration: 0.2s;
-    -webkit-transition-timing-function: ease;
-    -moz-transition-timing-function: ease;
-    -o-transition-timing-function: ease;
     transition-timing-function: ease; }
     .icon-retweet:hover {
       cursor: pointer;
       color: #16a085; }
   
   .icon-mail-reply {
-    -webkit-transition-property: all;
-    -moz-transition-property: all;
-    -o-transition-property: all;
     transition-property: all;
-    -webkit-transition-duration: 0.2s;
-    -moz-transition-duration: 0.2s;
-    -o-transition-duration: 0.2s;
     transition-duration: 0.2s;
-    -webkit-transition-timing-function: ease;
-    -moz-transition-timing-function: ease;
-    -o-transition-timing-function: ease;
     transition-timing-function: ease; }
     .icon-mail-reply:hover {
       cursor: pointer;
@@ -263,11 +181,7 @@
     display: block;
     background-color: #16a085;
     padding: 4px;
-    -moz-border-radius-bottomleft: 5px;
-    -webkit-border-bottom-left-radius: 5px;
     border-bottom-left-radius: 5px;
-    -moz-border-radius-bottomright: 5px;
-    -webkit-border-bottom-right-radius: 5px;
     border-bottom-right-radius: 5px; }
     .retweet .icon-retweet {
       color: white;
