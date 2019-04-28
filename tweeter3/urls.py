@@ -7,7 +7,6 @@ from django.urls import path, include
 from rest_framework import routers
 
 from tweeter import views
-#from tweeter.views import UserViewSet, TweetViewSet, SignUp, current_user
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
