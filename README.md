@@ -18,14 +18,14 @@ After the dev container has installed and files appear in the explorer, you are 
 ## Run some code!
 
 
-Build the node front end by opening a new with ```Ctrl-Shift-` ```, and running:
+Build the node front end by opening a new terminal with ```Ctrl-Shift-` ```, and running:
 
 ```
 npm run dev
 ```
 
 
-Start the Django server by opening a new terimanl (```Ctrl-Shift-` ```), and running:
+Start the Django server by opening a new terminal (```Ctrl-Shift-` ```), and running:
 
 ```
 python manage.py migrate
