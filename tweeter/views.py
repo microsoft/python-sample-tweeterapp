@@ -6,6 +6,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
 from django.http import HttpResponseRedirect
+from django.views.decorators.csrf import ensure_csrf_cookie
 
 from rest_framework import viewsets
 from rest_framework.response import Response
@@ -16,6 +17,7 @@ from tweeter.models import Tweet, User
 from tweeter.permissions import IsAuthorOrReadOnly, IsSelfOrAdmin
 from tweeter.serializers import TweetSerializer, UserSerializer
 
+@ensure_csrf_cookie
 def index(request):
     return render(request, 'tweeter/index.html')
 
