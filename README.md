@@ -9,7 +9,7 @@
     ```
 1. Clone repo 
     ```
-    git clone https://dev.azure.com/Microsoft/python-sample-tweeterapp
+    git clone https://github.com/Microsoft/python-sample-tweeterapp
     ```
 1. From Visual Studio Code Insiders, run the ```Remote-Containers: Open Folder in Container...``` and select the ```python-sample-tweeterapp``` folder
 
