@@ -21,6 +21,7 @@ After the dev container has installed and files appear in the explorer, you are 
 Build the node front end by opening a new terminal with ```Ctrl-Shift-` ```, and running:
 
 ```
+npm install
 npm run dev
 ```
 
