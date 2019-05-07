@@ -19,13 +19,12 @@ steps:
   displayName: 'docker login'
 - script: docker build -f Dockerfile -t $(imageName) .
   displayName: 'docker build'
-- script: docker run --name $(containerName) --detach -e DB_USER=$DB_USER -e DB_PASSWORD=$DB_PASSWORD -e DB_NAME=$DB_NAME -e DB_HOST=$DB_HOST $(imageName)
+- script: docker run --name $(containerName) --detach -e DJANGO_SETTINGS_MODULE=tweeter3.settings.production -e DB_USER=$DB_USER -e DB_PASSWORD=$DB_PASSWORD -e DB_NAME=$DB_NAME -e DB_HOST=$DB_HOST $(imageName)
   env:
     DB_USER: $(DB_USER)
     DB_PASSWORD: $(DB_PASSWORD)
     DB_NAME: $(DB_NAME)
     DB_HOST: $(DB_HOST)
-    DJANGO_SETTINGS_MODULE: tweeter3.settings.production
   displayName: 'start container'
 - script: docker exec $(containerName) pip3 install pytest pytest-azurepipelines
   displayName: install pytest
