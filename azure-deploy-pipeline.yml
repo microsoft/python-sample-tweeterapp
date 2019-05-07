@@ -25,6 +25,7 @@ steps:
     DB_PASSWORD: $(DB_PASSWORD)
     DB_NAME: $(DB_NAME)
     DB_HOST: $(DB_HOST)
+    DJANGO_SETTINGS_MODULE: tweeter3.settings.production
   displayName: 'start container'
 - script: docker exec $(containerName) pip3 install pytest pytest-azurepipelines
   displayName: install pytest
