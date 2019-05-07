@@ -4,33 +4,38 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
 trigger:
-- dockerized
+- master
 
 pool:
   vmImage: 'Ubuntu-16.04'
 
 variables:
   imageName: 'pythondemos.azurecr.io/tweeter3:latest'
-  PYTHON_VERSION: '3.7'
+  containerName: 'tweeterapp'
 steps:
-- task: UsePythonVersion@0
-  inputs:
-    versionSpec: '$(PYTHON_VERSION)'
-    architecture: 'x64'
-- script: |
-    python -m pip install --upgrade pip
-    pip install -r requirements.pipelines.txt
-    pip install pytest pytest-azurepipelines
-    pip install -e .
-  displayName: 'Install dependencies'
 - script: |
     python -m pytest tests/
   displayName: 'pytest'
 - script: docker login pythondemos.azurecr.io -u pythondemos -p $DOCKER_LOGIN_PASSWORD
   env:
-    DOCKER_LOGIN_PASSWORD: $(acrkey)
+    DOCKER_LOGIN_PASSWORD: $(ACR_KEY)
   displayName: 'docker login'
 - script: docker build -f Dockerfile -t $(imageName) .
   displayName: 'docker build'
+- script: docker run -n $(containerName) -e DB_USER=$DB_USER -e DB_PASSWORD=$DB_PASSWORD -e DB_NAME=$DB_NAME -e DB_HOST=$DB_HOST
+  env:
+    DB_USER: $(DB_USER)
+    DB_PASSWORD: $(DB_PASSWORD)
+    DB_NAME: $(DB_NAME)
+    DB_HOST: $(DB_HOST)
+  displayName: 'start container'
+- script: docker exec $(containerName) pip3 install pytest pytest-azurepipelines
+  displayName: install pytest
+- script: docker exec $(containerName) python3 -m pytest .
+  displayName: run tests
+- script: docker cp $(containerName):/app/test-output.xml .
+  displayName: copy test results
+- script: docker exec $(containerName) python3 manage.py migrate
+  displayName: run django migrations
 - script: docker push $(imageName)
   displayName: 'docker push'

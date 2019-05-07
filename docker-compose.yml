@@ -3,6 +3,7 @@ version: '2.1'
 services:
   tweeter3:
     image: pythondemos.azurecr.io/tweeter-app
+    container_name: tweeterapp
     build: .
     env_file: .env
     ports:

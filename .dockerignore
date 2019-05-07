@@ -12,3 +12,5 @@ README.md
 LICENSE
 .vscode
 env
+**/__pycache__
+**/*.pyc
