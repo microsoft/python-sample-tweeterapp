@@ -1,6 +1,4 @@
-# Python Django
-# Test a Django project on multiple versions of Python.
-# Add steps that analyze code, save build artifacts, deploy, and more:
+# Run Python pytests
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
 
 pool:
