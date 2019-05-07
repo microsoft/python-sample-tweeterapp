@@ -19,7 +19,7 @@ steps:
   displayName: 'docker login'
 - script: docker build -f Dockerfile -t $(imageName) .
   displayName: 'docker build'
-- script: docker run -n $(containerName) -e DB_USER=$DB_USER -e DB_PASSWORD=$DB_PASSWORD -e DB_NAME=$DB_NAME -e DB_HOST=$DB_HOST
+- script: docker run --name $(containerName) -e DB_USER=$DB_USER -e DB_PASSWORD=$DB_PASSWORD -e DB_NAME=$DB_NAME -e DB_HOST=$DB_HOST
   env:
     DB_USER: $(DB_USER)
     DB_PASSWORD: $(DB_PASSWORD)
