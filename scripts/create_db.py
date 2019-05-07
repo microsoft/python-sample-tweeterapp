@@ -2,8 +2,10 @@ import os
 import subprocess
 import urllib.request
 import dotenv
+import shlex
 
-dotenv.read_dotenv(os.getcwd() + "/.env")
+# Load dotenv file 
+dotenv.load_dotenv()
 
 REQUIRED_ENV_VARS = (
     'DB_USER',
@@ -14,6 +16,13 @@ REQUIRED_ENV_VARS = (
 
 AZ_GROUP=os.getenv('AZ_GROUP', 'appsvc_rg_linux_centralus')
 AZ_LOCATION=os.getenv('AZ_LOCATION', 'Central US')
+create_group_command = [
+    "az", "group", "create",
+    "--name", AZ_GROUP,
+    "--location", AZ_LOCATION
+]
+print("Creating resource group if needed...")
+subprocess.call(create_group_command, shell=True)
 
 missing = []
 for v in REQUIRED_ENV_VARS:
@@ -70,7 +79,6 @@ print("Allowing access from Azure...")
 subprocess.check_call(azure_firewall_command, shell=True)
 print("Allowing access from local IP...")
 subprocess.check_call(local_ip_firewall_command, shell=True)
-
 
 create_db_command = [
     'az', 'postgres', 'db', 'create',
