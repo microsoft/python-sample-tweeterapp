@@ -14,7 +14,7 @@ variables:
   containerName: 'tweeterapp'
 steps:
 - script: |
-    python -m pytest tests/
+    python -m pytest .
   displayName: 'pytest'
 - script: docker login pythondemos.azurecr.io -u pythondemos -p $DOCKER_LOGIN_PASSWORD
   env:
