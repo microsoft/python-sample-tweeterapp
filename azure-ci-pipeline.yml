@@ -18,7 +18,7 @@ steps:
     architecture: 'x64'
 - script: |
     python -m pip install --upgrade pip
-    pip install requirements.pipelines.txt
+    pip install -r requirements.pipelines.txt
     pip install pytest pytest-azurepipelines
   env:
     DJANGO_SETTINGS_MODULE: tweeter3.settings.development
