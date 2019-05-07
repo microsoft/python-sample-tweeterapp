@@ -20,9 +20,9 @@ steps:
     python -m pip install --upgrade pip
     pip install -r requirements.pipelines.txt
     pip install pytest pytest-azurepipelines
-  env:
-    DJANGO_SETTINGS_MODULE: tweeter3.settings.development
   displayName: 'Install dependencies'
 - script: |
     python -m pytest .
+  env:
+    DJANGO_SETTINGS_MODULE: tweeter3.settings.development
   displayName: 'pytest'
