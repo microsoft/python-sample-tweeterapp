@@ -11,8 +11,21 @@ pool:
 
 variables:
   imageName: 'pythondemos.azurecr.io/tweeter3:latest'
-
+  PYTHON_VERSION: '3.7'
 steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '$(PYTHON_VERSION)'
+    architecture: 'x64'
+- script: |
+    python -m pip install --upgrade pip
+    pip install requirements.txt
+    pip install pytest pytest-azurepipelines
+    pip install -e .
+  displayName: 'Install dependencies'
+- script: |
+    python -m pytest tests/
+  displayName: 'pytest'
 - script: docker login pythondemos.azurecr.io -u pythondemos -p $DOCKER_LOGIN_PASSWORD
   env:
     DOCKER_LOGIN_PASSWORD: $(acrkey)
