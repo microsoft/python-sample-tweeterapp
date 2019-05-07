@@ -28,7 +28,9 @@ steps:
   displayName: 'start container'
 - script: docker exec $(containerName) pip3 install pytest pytest-azurepipelines
   displayName: install pytest
-- script: docker exec $(containerName) touch test-output.xml && python3 -m pytest .
+- script: docker exec $(containerName) touch test-output.xml
+  displayName: touch test output file
+- script: docker exec $(containerName) python3 -m pytest .
   displayName: run tests
 - script: docker cp $(containerName):/app/test-output.xml .
   displayName: copy test results
