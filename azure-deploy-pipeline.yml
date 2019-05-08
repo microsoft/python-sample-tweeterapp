@@ -7,7 +7,7 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 variables:
-  imageName: 'pythondemos.azurecr.io/tweeter3:latest'
+  imageName: 'pythondemos.azurecr.io/tweeter-app:latest'
   containerName: 'tweeterapp'
 steps:
 - script: docker login pythondemos.azurecr.io -u pythondemos -p $DOCKER_LOGIN_PASSWORD
