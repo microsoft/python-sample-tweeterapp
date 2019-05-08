@@ -1,8 +1,8 @@
 # Build node front-end in a node container
 FROM node
 
-WORKDIR /app
-ADD . /app
+WORKDIR /nodebuild
+ADD . /nodebuild
 RUN npm install
 RUN npm run build
 
@@ -19,7 +19,7 @@ ENV UWSGI_INI uwsgi.ini
 ENV STATIC_URL /app/tweeter3/staticfiles
 
 WORKDIR /app
-ADD . /app
+COPY --from=0 /nodebuild /app
 
 # Install pip requirements and collect django static files
 RUN python3 -m pip install -r requirements.txt

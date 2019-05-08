@@ -12,5 +12,6 @@ README.md
 LICENSE
 .vscode
 env
+static/frontend
 **/__pycache__
 **/*.pyc
