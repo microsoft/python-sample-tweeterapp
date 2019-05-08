@@ -2,7 +2,6 @@ import os
 import subprocess
 import urllib.request
 import dotenv
-import shlex
 
 # Load dotenv file 
 dotenv.load_dotenv()
