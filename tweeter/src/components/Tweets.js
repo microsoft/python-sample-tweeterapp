@@ -3,12 +3,38 @@ import PropTypes from "prop-types";
 import "./Tweets.css"
 import Cookies from 'js-cookie'
 
+class Sentiment extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      sentiment: null
+    }
+  }
+  
+  componentDidMount() {
+    this.getSentiment()
+  }
+
+  async getSentiment() {
+    const response = await fetch('http://msbuildsentiment.azurewebsites.net/' + this.props.message);
+    const text = await response.text()
+    this.setState({sentiment: text})
+  }
+
+  render() {
+    if (this.state.sentiment == null) {
+      return <div></div>
+    }
+    return (<div>Sentiment: {this.state.sentiment}</div>)
+  }
+}
+
 class Tweets extends Component {
   constructor(props) {
       super(props);
       this.state = {
           addTweetText: '',
-          tweets : props.tweets
+          tweets: props.tweets
       }
   }
 
@@ -59,6 +85,7 @@ class Tweets extends Component {
                 <div className="bubble">
                   <p className='username'>@{tweet.user}</p>
                   <p className='tweettext'>{tweet.text}</p>
+                  <Sentiment message={tweet.text}></Sentiment>
                   <div className="over-bubble">
                     <div className='action-buttons'>
                       <i className='fa fa-reply'></i>
