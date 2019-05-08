@@ -1,6 +1,8 @@
 # Run Python pytests
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
-
+trigger:
+ - master
+ 
 pool:
   vmImage: 'Ubuntu 16.04'
 strategy:
