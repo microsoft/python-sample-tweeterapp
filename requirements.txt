@@ -1,5 +1,5 @@
 ﻿astroid==2.0.4
-Django>=2.6
+Django>=2.1.6
 python-dotenv
 djangorestframework==3.8.2
 isort==4.3.4
