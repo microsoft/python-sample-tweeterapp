@@ -34,6 +34,10 @@ python manage.py loaddata initial_data
 python manage.py runserver
 ```
 
+## Presentations
+
+* Build 2019: Building Python Web Applications with Visual Studio Code, Docker, and Azure 
+    * [[slides](https://1drv.ms/p/s!Ak36tGOBftKVv0ga1kcCTiPXhuff)] [[Sentiment  API Code](https://github.com/qubitron/qsentiment)]
 
 # Contributing
 
