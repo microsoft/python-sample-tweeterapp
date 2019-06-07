@@ -2,7 +2,7 @@ version: '2.1'
 
 services:
   tweeter3:
-    image: oreillyconference.azurecr.io/tweeter-app
+    image: pythondemos.azurecr.io/tweeter-app
     container_name: tweeterapp
     build: .
     env_file: .env

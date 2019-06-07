@@ -20,4 +20,4 @@ services:
     ports: 
       - 5432:5432
     environment:
-      POSTGRES_PASSWORD: IAmAPassword1!
+      POSTGRES_PASSWORD: LocalPassword

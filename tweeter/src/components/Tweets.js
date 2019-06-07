@@ -16,7 +16,7 @@ class Sentiment extends Component {
   }
 
   async getSentiment() {
-    const response = await fetch('https://msbuildsentiment-demo.azurewebsites.net/' + this.props.message);
+    const response = await fetch('http://msbuildsentiment.azurewebsites.net/' + this.props.message);
     const text = await response.text()
     this.setState({sentiment: text})
   }
