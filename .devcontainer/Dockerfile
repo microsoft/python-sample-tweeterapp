@@ -13,6 +13,8 @@ ENV PYTHONUNBUFFERED 1
 RUN mkdir /workspace
 WORKDIR /workspace
 
+ENV SHELL /bin/bash
+
 # Install node for building the front end
 RUN apt-get update
 RUN apt-get -y install curl gnupg
