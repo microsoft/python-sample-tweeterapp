@@ -24,3 +24,6 @@ COPY --from=0 /nodebuild /app
 # Install pip requirements and collect django static files
 RUN python3 -m pip install -r requirements.txt
 RUN python3 manage.py collectstatic --noinput
+
+# pytest
+ENV PATH="/root/.local/bin"
