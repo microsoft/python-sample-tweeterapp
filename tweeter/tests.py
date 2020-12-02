@@ -2,7 +2,6 @@ import django
 django.setup()
 
 import unittest
-import pytest
 from .serializers import TweetSerializer
 from tweeter.models import Tweet
 from django.contrib.auth.models import User
