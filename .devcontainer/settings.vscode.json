@@ -1,5 +1,5 @@
 {
     "python.pythonPath": "/usr/local/bin/python",
     "_workbench.uiExtensions" : [ "peterjausovec.vscode-docker" ],
-    "python.jediEnabled": false
+    "python.languageServer": "Pylance" 
 }
