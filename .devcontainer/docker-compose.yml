@@ -8,7 +8,6 @@ services:
     ports:
       - 8000:8000
     volumes:
-      - ~/.gitconfig:/root/.gitconfig
       - ..:/workspace
     command: sleep infinity
     environment:
